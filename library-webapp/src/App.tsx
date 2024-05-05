@@ -1,8 +1,9 @@
 import LoginPage from './Login/LoginPage';
-// import books from './Books/books';
+import BooksPage from './Books/BooksPage';
 
 function App() {
-  return <div className="App">{<LoginPage />}</div>;
+  return <div className="App">{<BooksPage />}</div>;
+  // return <div className="App">{<LoginPage />}</div>;
 }
 
 export default App;

@@ -1,4 +1,4 @@
-export interface BookType {
+export interface Book {
   BookID: string;
   ISBN: string;
   Title: string;
@@ -8,7 +8,7 @@ export interface BookType {
   AvailableCopies: number;
 }
 
-export const agathaChristieBooks: BookType[] = [
+export const agathaChristieBooks: Book[] = [
   {
     BookID: '1',
     ISBN: '978-0062073471',
@@ -145,29 +145,3 @@ export const agathaChristieBooks: BookType[] = [
     AvailableCopies: 7,
   },
 ];
-function createBookElement(book: BookType): string {
-  return `
-      <div class="book">
-          <h2>${book.Title}</h2>
-          <p><strong>Author:</strong> ${book.Author}</p>
-          <p><strong>Publisher:</strong> ${book.Publisher}</p>
-          <p><strong>Year Published:</strong> ${book.YearPublished}</p>
-          <p><strong>ISBN:</strong> <span class="isbn">${book.ISBN}</span></p>
-          <p class="availability ${book.AvailableCopies > 0 ? 'available' : 'unavailable'}">
-              <strong>Availability:</strong> ${book.AvailableCopies > 0 ? 'Available' : 'Out of stock'}
-          </p>
-      </div>
-  `;
-}
-
-function displayBooks(): void {
-  const bookListContainer: HTMLElement | null =
-    document.querySelector('.book-list');
-  if (!bookListContainer) return;
-  agathaChristieBooks.forEach((book) => {
-    const bookElement = createBookElement(book);
-    if (bookListContainer) bookListContainer.innerHTML += bookElement;
-  });
-}
-
-displayBooks();

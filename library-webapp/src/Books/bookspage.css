@@ -1,0 +1,23 @@
+.container {
+  padding: 2rem;
+}
+
+.books-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.books-grid {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.book-card {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+}
