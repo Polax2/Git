@@ -1,23 +1,32 @@
 .container {
   padding: 2rem;
-}
-
-.books-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  display: flex;
+  flex-direction: column;
   align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 }
-
-.books-grid {
-  flex: 1;
-  margin: 0 1rem;
+.books-container {
+  padding: 4rem;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-left: 40%;
 }
 
 .book-card {
-  padding: 1rem;
+  padding: 3rem;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 300px;
+  margin-left: 20px;
+}
+
+.button-container {
   width: 100%;
-  max-width: 300px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
 }
