@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Grid, Typography, Button } from '@mui/material';
 import { agathaChristieBooks, Book } from './booksList';
+import './bookspage.css';
 
 const BooksPage: React.FC = () => {
   const [startIndex, setStartIndex] = useState(0);
