@@ -2,26 +2,23 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 
 .books-container {
+  margin-top: 16%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.book-card {
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 300px;
+.book-title {
+  font-size: 20;
 }
 
 .button-container {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
   margin-top: 2rem;
 }

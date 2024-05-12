@@ -23,13 +23,15 @@ const BooksPage: React.FC = () => {
   return (
     <div className="container">
       <div className="books-container">
-        <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={7} justifyContent="center">
           {agathaChristieBooks
             .slice(startIndex, startIndex + 3)
             .map((book: Book) => (
               <Grid item key={book.BookID} xs={12} sm={6} md={4}>
                 <div className="book-card">
-                  <Typography variant="h6">{book.Title}</Typography>
+                  <Typography variant="h6" className="book-title">
+                    {book.Title}
+                  </Typography>
                   <Typography variant="subtitle1">
                     Author: {book.Author}
                   </Typography>
@@ -50,6 +52,7 @@ const BooksPage: React.FC = () => {
           <Button disabled={startIndex === 0} onClick={handlePrevClick}>
             Previous
           </Button>
+          <div style={{ flexGrow: 1 }}></div>
           <Button
             disabled={startIndex + 3 >= agathaChristieBooks.length}
             onClick={handleNextClick}
