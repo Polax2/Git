@@ -7,18 +7,23 @@
 
 .books-container {
   margin-top: 16%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   align-items: center;
 }
 
 .book-title {
-  font-size: 20;
+  font-size: 20px;
 }
 
-.button-container {
-  width: 100%;
+.button-container2 {
+  position: fixed;
+  bottom: -1cm;
+  left: -0.5cm;
+  width: calc(100% - 0cm);
   display: flex;
-  align-items: center;
-  margin-top: 2rem;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 999;
+  gap: 7cm;
 }

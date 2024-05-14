@@ -22,7 +22,7 @@ const BooksPage: React.FC = () => {
 
   return (
     <div className="container">
-      <div className="books-container">
+      <div className="books-container2">
         <Grid container spacing={7} justifyContent="center">
           {agathaChristieBooks
             .slice(startIndex, startIndex + 3)
@@ -48,11 +48,11 @@ const BooksPage: React.FC = () => {
               </Grid>
             ))}
         </Grid>
-        <div className="button-container">
+        <div className="button-container2">
           <Button disabled={startIndex === 0} onClick={handlePrevClick}>
             Previous
           </Button>
-          <div style={{ flexGrow: 1 }}></div>
+
           <Button
             disabled={startIndex + 3 >= agathaChristieBooks.length}
             onClick={handleNextClick}

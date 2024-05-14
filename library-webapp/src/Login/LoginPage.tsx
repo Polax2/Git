@@ -71,6 +71,7 @@ function LoginPage() {
             </div>
             <div className="button-container">
               <Button
+                style={{ backgroundColor: 'rgb(184, 146, 252)' }}
                 variant="contained"
                 startIcon={<LoginIcon />}
                 type="submit"

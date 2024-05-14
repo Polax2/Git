@@ -1,0 +1,40 @@
+.LoansPage {
+  background-image: url('C:\Users\polan\Downloads\stripes.jpeg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.LoanItem {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.BookCover {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  width: 90px;
+  height: 120px;
+  background-size: cover;
+  background-image: url('C:\Users\polan\Downloads\book2.png');
+}
+
+.BookCover img {
+  width: 100px;
+  height: 150px;
+}
+
+.LoanDetails {
+  flex: 1;
+}
+
+.LoanDetails h2 {
+  margin-top: 0;
+}
+
+.LoanDetails p {
+  margin: 5px 0;
+}

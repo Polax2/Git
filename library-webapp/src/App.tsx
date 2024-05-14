@@ -1,46 +1,39 @@
+import React from 'react';
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { Link, Routes, Route } from 'react-router-dom';
 import LoginPage from './Login/LoginPage';
 import BooksPage from './Books/BooksPage';
-import {
-  styled,
-  Box,
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-} from '@mui/material';
+import LoansPage from './Loans/LoansPage';
 
-const Header = styled(AppBar)(({ theme }) => ({
-  backgroundColor: '#f0f0f0',
-  color: '#333',
-  boxShadow: 'none',
-  borderBottom: '1px solid #ccc',
-}));
-
-function App() {
+const Header = () => {
   return (
-    <Box>
-      <Header position="static">
+    <>
+      <AppBar position="static" sx={{ backgroundColor: '#b892fc' }}>
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Christie's Corner Library
           </Typography>
-          <Button color="inherit" sx={{ mr: 2 }}>
+          <Button color="inherit" component={Link} to="/login">
             LOGIN
           </Button>
-          <Button color="inherit" sx={{ mr: 2 }}>
+          <Button color="inherit" component={Link} to="/collections">
             COLLECTIONS
           </Button>
-          <Button color="inherit" sx={{ mr: 2 }}>
+          <Button color="inherit" component={Link} to="/loans">
             LOANS
           </Button>
-          <Button color="inherit" sx={{ mr: 2 }}>
+          <Button color="inherit" component={Link} to="/about">
             ABOUT US
           </Button>
         </Toolbar>
-      </Header>
-      <BooksPage />
-    </Box>
+      </AppBar>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/collections" element={<BooksPage />} />
+        <Route path="/loans" element={<LoansPage />} />
+      </Routes>
+    </>
   );
-}
+};
 
-export default App;
+export default Header;
