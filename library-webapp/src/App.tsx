@@ -4,6 +4,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 import LoginPage from './Login/LoginPage';
 import BooksPage from './Books/BooksPage';
 import LoansPage from './Loans/LoansPage';
+import ApiProvider from './api/ApiProvider';
 
 const Header = () => {
   return (
@@ -22,16 +23,18 @@ const Header = () => {
           <Button color="inherit" component={Link} to="/loans">
             LOANS
           </Button>
-          <Button color="inherit" component={Link} to="/about">
-            ABOUT US
+          <Button color="inherit" component={Link} to="/staff section">
+            STAFF SECTION
           </Button>
         </Toolbar>
       </AppBar>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/collections" element={<BooksPage />} />
-        <Route path="/loans" element={<LoansPage />} />
-      </Routes>
+      <ApiProvider>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/collections" element={<BooksPage />} />
+          <Route path="/loans" element={<LoansPage />} />
+        </Routes>
+      </ApiProvider>
     </>
   );
 };

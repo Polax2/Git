@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, TextField } from '@mui/material';
 import './loginpage.css';
 import LoginIcon from '@mui/icons-material/Login';
@@ -6,25 +5,33 @@ import { Formik } from 'formik';
 import { useCallback, useMemo } from 'react';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import { useApi } from '../api/ApiProvider';
 
 function LoginPage() {
   const navigate = useNavigate();
+  const apiClient = useApi();
 
   const onSubmit = useCallback(
-    (values: { email: string; password: string }, formik: any) => {
-      console.log(values);
-      navigate('/collections');
+    (values: { username: string; password: string }, formik: any) => {
+      apiClient.login(values).then((response) => {
+        if (response.success) {
+          navigate('/collections');
+        } else {
+          formik.setFieldError('username', 'Invalid user or password');
+        }
+      });
     },
-    [navigate],
+    [apiClient, navigate],
   );
+
   const validationSchema = useMemo(
     () =>
       yup.object().shape({
-        email: yup.string().required('Required'),
+        username: yup.string().required('Required'),
         password: yup
           .string()
           .required('Required')
-          .min(7, 'Password too short'),
+          .min(5, 'Password too short'),
       }),
     [],
   );
@@ -33,7 +40,7 @@ function LoginPage() {
     <div className="container">
       <div className="rectangle"></div>
       <Formik
-        initialValues={{ email: '', password: '' }}
+        initialValues={{ username: '', password: '' }}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
         validateOnChange
@@ -49,14 +56,14 @@ function LoginPage() {
             <div className="input-wrapper">
               <div className="input-field">
                 <TextField
-                  id="email"
-                  label="Email"
+                  id="username"
+                  label="Username"
                   variant="outlined"
-                  name="email"
+                  name="username"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  error={formik.touched.email && !!formik.errors.email}
-                  helperText={formik.touched.email && formik.errors.email}
+                  error={formik.touched.username && !!formik.errors.username}
+                  helperText={formik.touched.username && formik.errors.username}
                 />
               </div>
               <div className="input-field">
