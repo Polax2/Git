@@ -5,6 +5,7 @@ import LoginPage from './Login/LoginPage';
 import BooksPage from './Books/BooksPage';
 import LoansPage from './Loans/LoansPage';
 import ApiProvider from './api/ApiProvider';
+import StaffSecttion from './Admin/StaffSection';
 
 const Header = () => {
   return (
@@ -23,7 +24,7 @@ const Header = () => {
           <Button color="inherit" component={Link} to="/loans">
             LOANS
           </Button>
-          <Button color="inherit" component={Link} to="/staff section">
+          <Button color="inherit" component={Link} to="/staffsection">
             STAFF SECTION
           </Button>
         </Toolbar>
@@ -33,6 +34,7 @@ const Header = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/collections" element={<BooksPage />} />
           <Route path="/loans" element={<LoansPage />} />
+          <Route path="/staffsection" element={<StaffSecttion />} />
         </Routes>
       </ApiProvider>
     </>

@@ -1,0 +1,67 @@
+.container2 {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+  top: 2.7cm; /* Lower the boxes by 4 cm */
+}
+
+.shelf {
+  position: absolute;
+  bottom: -10px; /* Lower the shelf slightly */
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #f4f2f2; /* Black shelf */
+}
+
+.box {
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  margin-top: 60px; /* Additional space between boxes */
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Adjust according to the shelf height */
+  left: 50%;
+  width: 100px;
+  height: 10px;
+  background-color: transparent; /* Make the pseudo-element transparent */
+  transform: translateX(-50%);
+}
+
+.box h3 {
+  margin-bottom: 20px;
+}
+
+.box ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.box ul li {
+  margin: 10px 0;
+}
+
+.box ul li button {
+  background-color: transparent;
+  border: 2px solid #5a0b9a;
+  color: #5a0b9a;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Ensure buttons take the full width of their container */
+}
+
+.box ul li button:hover {
+  background-color: #bb84f6cc;
+  color: white;
+}
