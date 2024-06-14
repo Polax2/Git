@@ -7,6 +7,7 @@ import LoansPage from './Loans/LoansPage';
 import ApiProvider from './api/ApiProvider';
 import StaffSecttion from './Admin/StaffSection';
 import Register from './Register/Register';
+import AllUsers from './Users/AllUsers';
 
 const Header = () => {
   return (
@@ -37,6 +38,7 @@ const Header = () => {
           <Route path="/loans" element={<LoansPage />} />
           <Route path="/staffsection" element={<StaffSecttion />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/allusers" element={<AllUsers />} />
         </Routes>
       </ApiProvider>
     </>

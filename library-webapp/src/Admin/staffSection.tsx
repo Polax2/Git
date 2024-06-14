@@ -12,6 +12,7 @@ const App: React.FC = () => {
 
   const viewMembers = () => {
     console.log('See all library members');
+    navigate('/allusers');
   };
 
   const searchUser = () => {
