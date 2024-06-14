@@ -6,6 +6,7 @@ import BooksPage from './Books/BooksPage';
 import LoansPage from './Loans/LoansPage';
 import ApiProvider from './api/ApiProvider';
 import StaffSecttion from './Admin/StaffSection';
+import Register from './Register/Register';
 
 const Header = () => {
   return (
@@ -35,6 +36,7 @@ const Header = () => {
           <Route path="/collections" element={<BooksPage />} />
           <Route path="/loans" element={<LoansPage />} />
           <Route path="/staffsection" element={<StaffSecttion />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </ApiProvider>
     </>

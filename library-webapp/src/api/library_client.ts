@@ -1,5 +1,7 @@
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 import { LoginDto, LoginResponseDto } from './dto/login.dto';
+import { RegisterDto, RegisterResponseDto } from './dto/register.dto';
+import { UserRole } from '../api/dto/UserRole';
 
 export type ClientResponse<T> = {
   success: boolean;
@@ -38,7 +40,27 @@ export class LibraryClient {
       };
     } catch (error) {
       const axiosError = error as AxiosError<Error>;
+      return {
+        success: false,
+        data: null,
+        statusCode: axiosError.response?.status || 0,
+      };
+    }
+  }
 
+  public async register(
+    data: RegisterDto,
+  ): Promise<ClientResponse<RegisterResponseDto | null>> {
+    try {
+      const response: AxiosResponse<RegisterResponseDto> =
+        await this.client.post('/auth/register', data);
+      return {
+        success: true,
+        data: response.data,
+        statusCode: response.status,
+      };
+    } catch (error) {
+      const axiosError = error as AxiosError<Error>;
       return {
         success: false,
         data: null,
@@ -57,7 +79,6 @@ export class LibraryClient {
       };
     } catch (error) {
       const axiosError = error as AxiosError<Error>;
-
       return {
         success: false,
         data: null,

@@ -1,0 +1,32 @@
+.register-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.register-rectangle {
+  width: 12cm;
+  height: 18cm;
+  background-color: rgba(148, 148, 148, 0.15);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.register-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.register-input-field {
+  width: 100%;
+}
+
+.register-button-container {
+  gap: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+}

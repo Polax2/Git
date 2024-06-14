@@ -1,9 +1,13 @@
 import React from 'react';
-import './staffsection.css'; // Import your CSS file
+import './staffsection.css';
+import { useNavigate } from 'react-router-dom';
 
 const App: React.FC = () => {
+  const navigate = useNavigate();
+
   const registerUser = () => {
     console.log('Register new user');
+    navigate('/register');
   };
 
   const viewMembers = () => {
