@@ -8,7 +8,7 @@ import ApiProvider from './api/ApiProvider';
 import StaffSecttion from './Admin/StaffSection';
 import Register from './Register/Register';
 import AllUsers from './Users/AllUsers';
-
+import SearchUser from './Users/SearchUser';
 const Header = () => {
   return (
     <>
@@ -39,6 +39,7 @@ const Header = () => {
           <Route path="/staffsection" element={<StaffSecttion />} />
           <Route path="/register" element={<Register />} />
           <Route path="/allusers" element={<AllUsers />} />
+          <Route path="/searchuser" element={<SearchUser />} />
         </Routes>
       </ApiProvider>
     </>

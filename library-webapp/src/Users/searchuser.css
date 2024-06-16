@@ -1,0 +1,54 @@
+.UsersPage {
+  background-image: url('C:/Users/polan/Downloads/stripes.jpeg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.SearchBar {
+  margin-bottom: 20px;
+}
+
+.SearchBar input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.UserItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.UserIcon {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-image: url('C:\Users\polan\Downloads\users3.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.UserDetails {
+  flex: 1;
+}
+
+.UserDetails h2 {
+  margin-top: 0;
+}
+
+.UserDetails p {
+  margin: 5px 0;
+}

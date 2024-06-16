@@ -17,6 +17,7 @@ const App: React.FC = () => {
 
   const searchUser = () => {
     console.log('Search for user');
+    navigate('/searchuser');
   };
 
   const addBook = () => {
