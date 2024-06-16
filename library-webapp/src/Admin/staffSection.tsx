@@ -22,6 +22,7 @@ const App: React.FC = () => {
 
   const addBook = () => {
     console.log('Add new book');
+    navigate('/addnew');
   };
 
   const addCopies = () => {

@@ -68,6 +68,37 @@ export class LibraryClient {
       };
     }
   }
+  public async createBook(
+    isbn: string,
+    title: string,
+    author: string,
+    publisher: string,
+    yearPublished: number,
+    availableCopies: number,
+  ): Promise<ClientResponse<any>> {
+    try {
+      const response = await this.client.post(`/books`, {
+        isbn,
+        title,
+        author,
+        publisher,
+        yearPublished,
+        availableCopies,
+      });
+      return {
+        success: true,
+        data: response.data,
+        statusCode: response.status,
+      };
+    } catch (error) {
+      const axiosError = error as AxiosError<Error>;
+      return {
+        success: false,
+        data: null,
+        statusCode: axiosError.response?.status || 0,
+      };
+    }
+  }
 
   public async getBooks(): Promise<ClientResponse<any | null>> {
     try {
