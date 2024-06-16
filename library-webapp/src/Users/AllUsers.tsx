@@ -1,3 +1,5 @@
+// AllUsers.tsx
+
 import React from 'react';
 import './allusers.css';
 
@@ -18,18 +20,13 @@ const AllUsers: React.FC = () => {
     <div className="UsersPage">
       {users.map((user) => (
         <div className="UserItem" key={user.id}>
-          <div className="UserIcon">
-            {/* User icon */}
-            <img
-              src="C:/Users/polan/OneDrive - Politechnika Wroclawska/Desktop/ICONS/users3.png"
-              alt="User Icon"
-            />
-          </div>
+          <div className="UserIcon" />
           <div className="UserDetails">
-            <p>"id": {user.id},</p>
-            <p>"name": "{user.name}",</p>
-            <p>"lastName": "{user.lastName}",</p>
-            <p>"email": "{user.email}"</p>
+            <h2>
+              {user.name} {user.lastName}
+            </h2>
+            <p>ID: {user.id}</p>
+            <p>Email: {user.email}</p>
           </div>
         </div>
       ))}

@@ -3,14 +3,18 @@
   background-size: cover;
   background-position: center;
   min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .UserItem {
   display: flex;
+  align-items: center;
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .UserIcon {
@@ -18,12 +22,11 @@
   margin-right: 20px;
   width: 150px;
   height: 150px;
-}
-
-.UserIcon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  border-radius: 5px;
+  overflow: hidden;
+  background-image: url('C:/Users/polan/Downloads/users3.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .UserDetails {
