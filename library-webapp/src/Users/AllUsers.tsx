@@ -1,5 +1,3 @@
-// AllUsers.tsx
-
 import React from 'react';
 import './allusers.css';
 
