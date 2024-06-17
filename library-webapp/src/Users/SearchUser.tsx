@@ -11,7 +11,6 @@ interface User {
 const users: User[] = [
   { id: 1, name: 'John', lastName: 'Doe', email: 'john.doe@example.com' },
   { id: 2, name: 'Jane', lastName: 'Doe', email: 'jane.doe@example.com' },
-  // Add more users as needed
 ];
 
 const SearchUser: React.FC = () => {

@@ -10,6 +10,7 @@ import Register from './Register/Register';
 import AllUsers from './Users/AllUsers';
 import SearchUser from './Users/SearchUser';
 import AddNew from './Books/AddNew';
+import SearchBook from './Books/SearchBook';
 const Header = () => {
   return (
     <>
@@ -42,6 +43,7 @@ const Header = () => {
           <Route path="/allusers" element={<AllUsers />} />
           <Route path="/searchuser" element={<SearchUser />} />
           <Route path="/addnew" element={<AddNew />} />
+          <Route path="/searchbook" element={<SearchBook />} />
         </Routes>
       </ApiProvider>
     </>

@@ -31,6 +31,7 @@ const App: React.FC = () => {
 
   const searchBook = () => {
     console.log('Search for book');
+    navigate('/searchbook');
   };
 
   const viewLoans = () => {
