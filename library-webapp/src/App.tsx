@@ -11,6 +11,7 @@ import AllUsers from './Users/AllUsers';
 import SearchUser from './Users/SearchUser';
 import AddNew from './Books/AddNew';
 import SearchBook from './Books/SearchBook';
+import AddCopies from './Books/AddCopies';
 const Header = () => {
   return (
     <>
@@ -44,6 +45,7 @@ const Header = () => {
           <Route path="/searchuser" element={<SearchUser />} />
           <Route path="/addnew" element={<AddNew />} />
           <Route path="/searchbook" element={<SearchBook />} />
+          <Route path="/addcopies" element={<AddCopies />} />
         </Routes>
       </ApiProvider>
     </>

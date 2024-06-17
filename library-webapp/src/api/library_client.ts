@@ -117,4 +117,26 @@ export class LibraryClient {
       };
     }
   }
+  public async addCopies(
+    isbn: string,
+    additionalCopies: number,
+  ): Promise<ClientResponse<any>> {
+    try {
+      const response = await this.client.patch(`/books/${isbn}/addCopies`, {
+        additionalCopies,
+      });
+      return {
+        success: true,
+        data: response.data,
+        statusCode: response.status,
+      };
+    } catch (error) {
+      const axiosError = error as AxiosError<Error>;
+      return {
+        success: false,
+        data: null,
+        statusCode: axiosError.response?.status || 0,
+      };
+    }
+  }
 }

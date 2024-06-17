@@ -27,6 +27,7 @@ const App: React.FC = () => {
 
   const addCopies = () => {
     console.log('Add copies to already existing book');
+    navigate('/addcopies');
   };
 
   const searchBook = () => {
