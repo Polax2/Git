@@ -1,0 +1,55 @@
+.LoansPage {
+  background-image: url('C:/Users/polan/Downloads/stripes.jpeg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.SearchBar {
+  margin-bottom: 20px;
+}
+
+.SearchBar input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.LoanItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.LoanDetails {
+  flex: 1;
+}
+
+.LoanDetails h2 {
+  margin-top: 0;
+}
+
+.LoanDetails p {
+  margin: 5px 0;
+}
+
+.DeleteButton {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.DeleteButton:hover {
+  background-color: #ff1a1a;
+}

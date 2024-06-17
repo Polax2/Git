@@ -2,6 +2,7 @@ import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 import { LoginDto, LoginResponseDto } from './dto/login.dto';
 import { RegisterDto, RegisterResponseDto } from './dto/register.dto';
 import { UserRole } from '../api/dto/UserRole';
+import { LoanDto, BookDto, UserDto } from '../api/dto/objects.dto';
 
 export type ClientResponse<T> = {
   success: boolean;
@@ -125,6 +126,75 @@ export class LibraryClient {
       const response = await this.client.patch(`/books/${isbn}/addCopies`, {
         additionalCopies,
       });
+      return {
+        success: true,
+        data: response.data,
+        statusCode: response.status,
+      };
+    } catch (error) {
+      const axiosError = error as AxiosError<Error>;
+      return {
+        success: false,
+        data: null,
+        statusCode: axiosError.response?.status || 0,
+      };
+    }
+  }
+  public async getAllLoans(): Promise<ClientResponse<{ loans: LoanDto[] }>> {
+    try {
+      const response: AxiosResponse<{ loans: LoanDto[] }> =
+        await this.client.get('/loans');
+      return {
+        success: true,
+        data: response.data,
+        statusCode: response.status,
+      };
+    } catch (error) {
+      const axiosError = error as AxiosError<Error>;
+      return {
+        success: false,
+        data: { loans: [] },
+        statusCode: axiosError.response?.status || 0,
+      };
+    }
+  }
+
+  public async deleteLoan(loanId: number): Promise<ClientResponse<null>> {
+    try {
+      const response: AxiosResponse<null> = await this.client.delete(
+        `/loans/${loanId}`,
+      );
+      return {
+        success: true,
+        data: null,
+        statusCode: response.status,
+      };
+    } catch (error) {
+      const axiosError = error as AxiosError<Error>;
+      return {
+        success: false,
+        data: null,
+        statusCode: axiosError.response?.status || 0,
+      };
+    }
+  }
+
+  public async createLoan(
+    userId: number,
+    bookId: number,
+    loanDate: string,
+    dueDate: string,
+  ): Promise<ClientResponse<LoanDto | null>> {
+    try {
+      const response: AxiosResponse<LoanDto> = await this.client.post(
+        '/loans',
+        {
+          userId,
+          bookId,
+          loanDate,
+          dueDate,
+        },
+      );
       return {
         success: true,
         data: response.data,

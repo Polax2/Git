@@ -37,6 +37,7 @@ const App: React.FC = () => {
 
   const viewLoans = () => {
     console.log('See all current loans');
+    navigate('/allloans');
   };
 
   return (
