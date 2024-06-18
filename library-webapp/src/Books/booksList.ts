@@ -1,5 +1,5 @@
 export interface Book {
-  BookID: string;
+  BookID: number;
   ISBN: string;
   Title: string;
   Author: string;
@@ -10,7 +10,7 @@ export interface Book {
 
 export const agathaChristieBooks: Book[] = [
   {
-    BookID: '1',
+    BookID: 1,
     ISBN: '978-0062073471',
     Title: 'Murder on the Orient Express',
     Author: 'Agatha Christie',
@@ -19,7 +19,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 20,
   },
   {
-    BookID: '2',
+    BookID: 2,
     ISBN: '978-0062073570',
     Title: 'And Then There Were None',
     Author: 'Agatha Christie',
@@ -28,7 +28,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 10,
   },
   {
-    BookID: '3',
+    BookID: 3,
     ISBN: '978-0312981667',
     Title: 'The Murder of Roger Ackroyd',
     Author: 'Agatha Christie',
@@ -37,7 +37,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 8,
   },
   {
-    BookID: '4',
+    BookID: 4,
     ISBN: '978-0312981438',
     Title: 'Death on the Nile',
     Author: 'Agatha Christie',
@@ -46,7 +46,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 7,
   },
   {
-    BookID: '5',
+    BookID: 5,
     ISBN: '978-0312981643',
     Title: 'The ABC Murders',
     Author: 'Agatha Christie',
@@ -55,7 +55,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 6,
   },
   {
-    BookID: '6',
+    BookID: 6,
     ISBN: '978-0312981544',
     Title: 'Murder in Mesopotamia',
     Author: 'Agatha Christie',
@@ -64,7 +64,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 4,
   },
   {
-    BookID: '7',
+    BookID: 7,
     ISBN: '978-0312981650',
     Title: 'The Murder at the Vicarage',
     Author: 'Agatha Christie',
@@ -73,7 +73,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 9,
   },
   {
-    BookID: '8',
+    BookID: 8,
     ISBN: '978-0312981674',
     Title: 'Peril at End House',
     Author: 'Agatha Christie',
@@ -82,7 +82,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 3,
   },
   {
-    BookID: '9',
+    BookID: 9,
     ISBN: '978-0312981476',
     Title: 'The Mysterious Affair at Styles',
     Author: 'Agatha Christie',
@@ -91,7 +91,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 8,
   },
   {
-    BookID: '10',
+    BookID: 10,
     ISBN: '978-0312981483',
     Title: 'The Moving Finger',
     Author: 'Agatha Christie',
@@ -100,7 +100,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 5,
   },
   {
-    BookID: '11',
+    BookID: 11,
     ISBN: '978-0312981452',
     Title: 'Nemesis',
     Author: 'Agatha Christie',
@@ -109,7 +109,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 6,
   },
   {
-    BookID: '12',
+    BookID: 12,
     ISBN: '978-0312981636',
     Title: 'Appointment with Death',
     Author: 'Agatha Christie',
@@ -118,7 +118,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 2,
   },
   {
-    BookID: '13',
+    BookID: 13,
     ISBN: '978-0312981698',
     Title: 'Five Little Pigs',
     Author: 'Agatha Christie',
@@ -127,7 +127,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 4,
   },
   {
-    BookID: '14',
+    BookID: 14,
     ISBN: '978-0312981575',
     Title: 'Sad Cypress',
     Author: 'Agatha Christie',
@@ -136,7 +136,7 @@ export const agathaChristieBooks: Book[] = [
     AvailableCopies: 3,
   },
   {
-    BookID: '15',
+    BookID: 15,
     ISBN: '978-0312981469',
     Title: 'Elephants Can Remember',
     Author: 'Agatha Christie',

@@ -1,8 +1,7 @@
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 import { LoginDto, LoginResponseDto } from './dto/login.dto';
 import { RegisterDto, RegisterResponseDto } from './dto/register.dto';
-import { UserRole } from '../api/dto/UserRole';
-import { LoanDto, BookDto, UserDto } from '../api/dto/objects.dto';
+import { LoanDto } from '../api/dto/objects.dto';
 
 export type ClientResponse<T> = {
   success: boolean;

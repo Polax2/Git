@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './allloans.css';
 import { useApi } from '../api/ApiProvider';
-import { LoanDto, BookDto, UserDto } from '../api/dto/objects.dto';
+import { LoanDto } from '../api/dto/objects.dto';
 
 const AllLoans: React.FC = () => {
   const [loans, setLoans] = useState<LoanDto[]>([]);
