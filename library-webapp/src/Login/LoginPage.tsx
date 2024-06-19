@@ -64,6 +64,7 @@ function LoginPage() {
                   onBlur={formik.handleBlur}
                   error={formik.touched.username && !!formik.errors.username}
                   helperText={formik.touched.username && formik.errors.username}
+                  autoComplete="username"
                 />
               </div>
               <div className="input-field">
@@ -77,6 +78,7 @@ function LoginPage() {
                   onBlur={formik.handleBlur}
                   error={formik.touched.password && !!formik.errors.password}
                   helperText={formik.touched.password && formik.errors.password}
+                  autoComplete="current-password"
                 />
               </div>
             </div>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useApi } from '../api/ApiProvider';
 import './allusers.css';
 
 interface User {
@@ -8,12 +9,28 @@ interface User {
   email: string;
 }
 
-const users: User[] = [
-  { id: 1, name: 'John', lastName: 'Doe', email: 'john.doe@example.com' },
-  { id: 2, name: 'Jane', lastName: 'Doe', email: 'jane.doe@example.com' },
-];
-
 const AllUsers: React.FC = () => {
+  const apiClient = useApi();
+  const [users, setUsers] = useState<User[]>([]);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await apiClient.getUsers(currentPage);
+        console.log('getAllUsers response:', response);
+        if (response.success && response.data) {
+          setUsers(response.data);
+        } else {
+          console.error('Failed to fetch users:', response.statusCode);
+        }
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
+    };
+    fetchUsers();
+  }, [apiClient, currentPage]);
+
   return (
     <div className="UsersPage">
       {users.map((user) => (

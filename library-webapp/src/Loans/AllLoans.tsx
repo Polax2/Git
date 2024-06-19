@@ -6,18 +6,19 @@ import { LoanDto } from '../api/dto/objects.dto';
 const AllLoans: React.FC = () => {
   const [loans, setLoans] = useState<LoanDto[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(0);
   const apiClient = useApi();
 
   useEffect(() => {
     const fetchLoans = async () => {
-      const response = await apiClient.getAllLoans();
+      const response = await apiClient.getLoans(currentPage);
       if (response.success) {
-        setLoans(response.data.loans);
+        setLoans(response.data);
       }
     };
 
     fetchLoans();
-  }, [apiClient]);
+  }, [apiClient, currentPage]);
 
   const handleDelete = async (loanId: number) => {
     const response = await apiClient.deleteLoan(loanId);

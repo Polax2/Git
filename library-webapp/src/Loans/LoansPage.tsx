@@ -8,7 +8,7 @@ interface LoanItemProps {
 
 const LoanItem: React.FC<LoanItemProps> = ({ loan }) => (
   <div key={loan.BookID} className="LoanItem">
-    <div className="BookCover"></div> {/* Keep the BookCover div */}
+    <div className="BookCover"></div> {}
     <div className="LoanDetails">
       <h2>{loan.Title}</h2>
       <p>
