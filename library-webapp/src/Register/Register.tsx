@@ -6,6 +6,7 @@ import { Button, TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { UserRole } from '../api/dto/UserRole';
 import { ClientResponse } from '../api/library_client';
+import './register.css';
 
 const Register: React.FC = () => {
   const apiClient = useApi();
@@ -30,31 +31,40 @@ const Register: React.FC = () => {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <TextField
-        name="username"
-        label="Username"
-        value={formik.values.username}
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-      />
-      <TextField
-        name="password"
-        label="Password"
-        type="password"
-        value={formik.values.password}
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-      />
-      <TextField
-        name="email"
-        label="Email"
-        value={formik.values.email}
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-      />
-      <Button type="submit">Register</Button>
-    </form>
+    <div className="register-container">
+      <div className="register-rectangle">
+        <form onSubmit={formik.handleSubmit} className="register-input-wrapper">
+          <TextField
+            name="username"
+            label="Username"
+            value={formik.values.username}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            className="register-input-field"
+          />
+          <TextField
+            name="password"
+            label="Password"
+            type="password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            className="register-input-field"
+          />
+          <TextField
+            name="email"
+            label="Email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            className="register-input-field"
+          />
+          <div className="register-button-container">
+            <Button type="submit">Register</Button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };
 

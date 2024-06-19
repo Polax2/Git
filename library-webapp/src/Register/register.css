@@ -13,12 +13,16 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .register-input-wrapper {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 80%;
 }
 
 .register-input-field {
@@ -26,7 +30,7 @@
 }
 
 .register-button-container {
-  gap: 3rem;
+  display: flex;
+  justify-content: center;
   margin-top: 2rem;
-  text-align: center;
 }
